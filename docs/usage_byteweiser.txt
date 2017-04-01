@@ -1,0 +1,72 @@
+
+USAGE (byteweiser.py)
+
+    Contents:
+
+        1.  Definition
+        2.  General stuff
+          2.1  Overview of all command-line arguments
+          2.2  Requirements
+        3.  Compare and replace
+          3.1  Compare two files
+          3.2  Replace different blocks
+
+    1. Definition
+
+        Simple tool to compare two files and replace different bytes.
+
+    2. General stuff
+
+        2.1 Overview of all command-line arguments
+
+            The script requires command-line arguments to operate. You can get
+            an overview of all arguments available, by simply running the main
+            script with the '--help' argument:
+
+                $ ./byteweiser.py --help
+
+        2.2 Requirements
+
+            In order to run ByteWeiser, the Python 3.x framework must be
+            installed on the system.
+
+            There is no official version for the Python 2.x framework, but if
+            you need that for whatever reason, you can try refactoring the
+            syntax from Python 3.x to version 2.x using the '3to2' tool.
+
+            However, there is no guarantee that this works properly or at all.
+
+                https://pypi.python.org/pypi/3to2
+
+    3. Compare and replace
+
+        3.1 Compare two files
+
+            The main ByteWeiser script expects an input as well as an output
+            file. The bytes (blocks) will be read from the input file and the
+            different ones will be written into the output file. Well, that
+            should be self-explanatory.
+
+            Before writing any data, the process should be simulated first.
+            There is a command-line argument to do so.
+
+            For example, the input file is called 'input.foo' and the output
+            file 'output.foo'. Now, to compare the two files without changing
+            the output file (simulate), type:
+
+                $ ./byteweiser.py -i input.foo -o output.foo -s
+
+            The script compares both files and returns how many blocks would
+            have been changed inside the output file.
+
+        3.2 Replace different blocks
+
+            Now, to replace the different blocks, run the command line shown
+            in section 3.1 above without the command-line argument for
+            simulating the process:
+
+                $ ./byteweiser.py -i input.foo -o output.foo
+
+            Notice that in case the output file is bigger than the input file
+            the output file will be truncated.
+
