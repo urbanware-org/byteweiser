@@ -51,7 +51,7 @@ Tool | Version | Command | Elapsed time |
 
 Due to the fact, that *ByteWeiser* only supports local paths for the input and output files, the remote directory must be mounted locally (for example by using *CIFS* or *sshfs*). 
 
-For this test the target file is located on a *CIFS* mount in `/mnt/foo`.
+For this test, the target file is located on a *CIFS* mount in `/mnt/foo`.
 
 #### 1 GigaByte
 
@@ -83,7 +83,7 @@ However, there is no guarantee that this works properly or at all.
 
 The *ByteWeiser* project has only been tested on *Linux* systems, yet.
 
-However, it should also work on *Windows* systems.
+However, it should also work on *Windows*.
 
 ## Usage
 
