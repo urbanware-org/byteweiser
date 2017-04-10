@@ -2,17 +2,17 @@
 
 ## Definition
 
-The *ByteWeiser* project is a simple tool to compare two files and replace different bytes.
+The *ByteWeiser* project is a simple file synchronization tool that compares two files blockwise and replaces the different bytes.
 
 ## Details
 
 Initially developed to accelerate the backup of virtual machine images, *ByteWeiser* compares the binary data of two files, by running through them block by block. If the current block of the output file is different from that of the input file, the block of the output file will be overwritten with the one from the input file.
 
-You could also use `rsync` with delta compression for that. However, *Byteweiser* seems to be faster in some cases.
+You could also use *rsync* with delta compression for that. However, *ByteWeiser* seems to be faster in some cases. Both tools have a completely different functional principle, where *ByteWeiser* is the one that "mindlessly" (simply) processes the data instead of using algorithms and checksums.
 
 ## Performance
 
-I tested the performance of *ByteWeiser* and compared it with the results of `rsync`.
+I have tested the performance of *ByteWeiser* and compared it with the results of *rsync*.
 
 For that, I created a file (`file1`) and duplicated it. Then, I edited the duplicate (`file2`) using *Vim* (yes, seriously) and changed a single byte at the end of the file. 
 
@@ -22,7 +22,7 @@ Notice that the elapsed times are average values, no liability assumed.
 
 #### Environment
 
-I've tested that on my current system at work:
+The tests have been performed on my current system at work:
 
 * *Intel Core i7-4770* CPU @ 3.40GHz
 * 32 GigaByte DDR3 RAM
@@ -30,8 +30,6 @@ I've tested that on my current system at work:
   * SATA 3Gb/s
   * 4K Sectors
   * *ext4* file system
-
-
 
 #### 1 GigaByte
 
@@ -51,7 +49,9 @@ Tool | Version | Command | Elapsed time |
 
 ### Remote system
 
-For this test the target file is located on a *CIFS* mount (`/mnt/foo`).
+Due to the fact, that *ByteWeiser* only supports local paths for the input and output files, the remote directory must be mounted locally (for example by using *CIFS* or *sshfs*). 
+
+For this test the target file is located on a *CIFS* mount in `/mnt/foo`.
 
 #### 1 GigaByte
 
@@ -83,11 +83,13 @@ However, there is no guarantee that this works properly or at all.
 
 The *ByteWeiser* project has only been tested on *Linux* systems, yet.
 
+However, it should also work on *Windows* systems.
+
 ## Usage
 
 Inside the `docs` sub-directory, there are plain text files containing the documentation for each component with further information and usage examples.
 
-## Useless facts ##
+## Useless facts
 
 * Actually, the project should be called "BlockWeiser", because the binary data is being processed blockwise instead of bytewise.
 * The name is derived from the German adjective "byteweise" ("bytewise").
