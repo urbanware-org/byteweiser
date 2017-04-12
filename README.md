@@ -13,6 +13,8 @@
 
 The *ByteWeiser* project is a simple file synchronization tool that compares two files blockwise and replaces the different bytes.
 
+[Top](#byteweiser-)
+
 ## Details
 
 Initially developed to accelerate the backup of virtual machine images, *ByteWeiser* compares the binary data of two files, by running through them block by block. If the current block of the output file is different from that of the input file, the block of the output file will be overwritten with the one from the input file.
