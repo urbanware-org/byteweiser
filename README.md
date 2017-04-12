@@ -1,5 +1,14 @@
 # *ByteWeiser* <img src="byteweiser.png" alt="ByteWeiser logo" height=48px width=76px align="right"/>
 
+**Table of contents**
+* [Definition](#definition)
+* [Details](#details)
+* [Performance](#performance)
+* [Notice](#notice)
+* [Useless facts](#useless-facts)
+
+----
+
 ## Definition
 
 The *ByteWeiser* project is a simple file synchronization tool that compares two files blockwise and replaces the different bytes.
@@ -9,6 +18,8 @@ The *ByteWeiser* project is a simple file synchronization tool that compares two
 Initially developed to accelerate the backup of virtual machine images, *ByteWeiser* compares the binary data of two files, by running through them block by block. If the current block of the output file is different from that of the input file, the block of the output file will be overwritten with the one from the input file.
 
 You could also use *rsync* with delta compression for that. However, *ByteWeiser* seems to be faster in some cases. Both tools have a completely different functional principle, where *ByteWeiser* is the one that "mindlessly" (simply) processes the data instead of using algorithms and checksums.
+
+[Top](#byteweiser-)
 
 ## Performance
 
@@ -69,6 +80,8 @@ Tool | Version | Command | Elapsed time |
 *rsync* | 3.0.6 | `rsync -avv --no-whole-file file1 /mnt/foo/file2` | 04:12 min
 *ByteWeiser* | 1.0.0-rc1 | `byteweiser.py -i file1 -o /mnt/foo/file2` | 01:34 min
 
+[Top](#byteweiser-)
+
 ## Notice
 
 ### *Python* framework
@@ -85,11 +98,17 @@ The *ByteWeiser* project has only been tested on *Linux* systems, yet.
 
 However, it should also work on *Windows*.
 
+[Top](#byteweiser-)
+
 ## Usage
 
 Inside the `docs` sub-directory, there are plain text files containing the documentation for each component with further information and usage examples.
+
+[Top](#byteweiser-)
 
 ## Useless facts
 
 * Actually, the project should be called "BlockWeiser", because the binary data is being processed blockwise instead of bytewise.
 * The name is derived from the German adjective "byteweise" ("bytewise").
+
+[Top](#byteweiser-)
