@@ -13,7 +13,8 @@ USAGE (byteweiser.py)
 
     1. Definition
 
-        Simple tool to compare two files and replace different bytes.
+        Simple file synchronization tool that compares files blockwise and
+        replaces different bytes.
 
     2. General stuff
 
