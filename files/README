@@ -7,18 +7,18 @@ README
         environment, you can use these binary files, each with two-thirds of
         equal bytes, generated using '/dev/urandom' as follows:
 
-            $ dd if=/dev/urandom of=head bs=200K count=1
-            $ dd if=/dev/urandom of=body bs=200K count=1
-            $ dd if=/dev/urandom of=foot bs=200K count=1
+            $ dd if=/dev/urandom of=head bs=40K count=1
+            $ dd if=/dev/urandom of=body bs=40K count=1
+            $ dd if=/dev/urandom of=foot bs=40K count=1
             $ cat head > file1
             $ cat body >> file1
             $ cat foot >> file1
-            $ dd if=/dev/urandom of=body bs=200K count=1
+            $ dd if=/dev/urandom of=body bs=40K count=1
             $ cat head > file2
             $ cat body >> file2
             $ cat foot >> file2
 
-        So, they are (useless) files for ByteWeiser testing purposes, only.
+        They are just (useless) files for ByteWeiser testing purposes, only.
         
     Bitmap files
     
