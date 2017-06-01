@@ -1,4 +1,4 @@
-# *ByteWeiser* <img src="byteweiser.png" alt="ByteWeiser logo" height=48px width=76px align="right"/>
+# *ByteWeiser* <img src="byteweiser.png" alt="ByteWeiser logo" align="right"/>
 
 **Table of contents**
 * [Definition](#definition)
