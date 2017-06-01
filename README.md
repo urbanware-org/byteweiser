@@ -110,7 +110,7 @@ Inside the `docs` sub-directory, there are plain text files containing the docum
 
 ## Useless facts
 
-* Actually, the project should be called "BlockWeiser", because the binary data is being processed blockwise instead of bytewise.
+* Actually, the project should be called "BlockWeiser", because the binary data is being processed blockwise instead of bytewise. If you want it bytewise, just set the buffer size to `1`.
 * The name is derived from the German adjective "byteweise" ("bytewise").
 
 [Top](#byteweiser-)
