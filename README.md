@@ -4,7 +4,7 @@
 * [Definition](#definition)
 * [Details](#details)
 * [Performance](#performance)
-* [Notice](#notice)
+* [Requirements](#requirements)
 * [Useless facts](#useless-facts)
 
 ----
@@ -84,7 +84,7 @@ Tool | Version | Command | Elapsed time |
 
 [Top](#byteweiser-)
 
-## Notice
+## Requirements
 
 ### *Python* framework
 
@@ -94,11 +94,11 @@ There is no official version for *Python* 2.x, but if you need that for whatever
 
 However, there is no guarantee that this works properly or at all.
 
-### Platforms
+### Environment
 
 The *ByteWeiser* project has only been tested on *Linux* systems, yet.
 
-However, it should also work on *Windows*.
+However, it should also work on other platforms, but also without any guarantee.
 
 [Top](#byteweiser-)
 
