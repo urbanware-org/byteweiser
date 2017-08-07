@@ -10,7 +10,7 @@
 # GitHub: https://github.com/urbanware-org/byteweiser
 # ============================================================================
 
-__version__ = "1.0.0-rc1"
+__version__ = "1.0.0"
 
 def get_file_size(file_path):
     """
