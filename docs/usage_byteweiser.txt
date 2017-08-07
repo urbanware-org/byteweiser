@@ -7,6 +7,7 @@ USAGE (byteweiser.py)
         2.  General stuff
           2.1  Overview of all command-line arguments
           2.2  Requirements
+          2.3  Notice
         3.  Compare and replace
           3.1  Compare two files
           3.2  Replace different blocks
@@ -38,6 +39,14 @@ USAGE (byteweiser.py)
             However, there is no guarantee that this works properly or at all.
 
                 https://pypi.python.org/pypi/3to2
+
+        2.3 Notice
+
+            The *ByteWeiser* project has been written on *Linux* and only been
+            tested on that platform, yet.
+
+            However, it should work on other platforms, but also without any
+            guarantee.
 
     3. Compare and replace
 
