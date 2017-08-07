@@ -5,6 +5,7 @@
 * [Details](#details)
 * [Performance](#performance)
 * [Requirements](#requirements)
+* [Notice](#notice)
 * [Useless facts](#useless-facts)
 
 ----
@@ -86,19 +87,19 @@ Tool | Version | Command | Elapsed time |
 
 ## Requirements
 
-### *Python* framework
-
 In order to run *ByteWeiser*, the *Python* 3.x framework must be installed on the system.
 
 There is no official version for *Python* 2.x, but if you need that for whatever reason, you can try refactoring the syntax from *Python* 3.x to version 2.x using the *[3to2](https://pypi.python.org/pypi/3to2)* tool.
 
 However, there is no guarantee that this works properly or at all.
 
-### Environment
+[Top](#byteweiser-)
 
-The *ByteWeiser* project has only been tested on *Linux* systems, yet.
+## Notice
 
-However, it should also work on other platforms, but also without any guarantee.
+The *ByteWeiser* project has been written on *Linux* and only been tested on that platform, yet.
+
+However, it should work on other platforms, but also without any guarantee.
 
 [Top](#byteweiser-)
 
