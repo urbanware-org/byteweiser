@@ -42,7 +42,7 @@ USAGE (byteweiser.py)
 
         2.3 Notice
 
-            The *ByteWeiser* project has been written on *Linux* and only been
+            The ByteWeiser project has been written on Linux and only been
             tested on that platform, yet.
 
             However, it should work on other platforms, but also without any
