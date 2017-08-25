@@ -99,7 +99,7 @@ However, there is no guarantee that this works properly or at all.
 
 The *ByteWeiser* project has been written on *Linux* and only been tested on that platform, yet.
 
-However, it should work on other platforms, but also without any guarantee.
+Nevertheless, it should work on other platforms, but also without any guarantee.
 
 [Top](#byteweiser-)
 
