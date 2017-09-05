@@ -52,7 +52,7 @@ def main():
 
     args = p.parse_args()
     try:
-        verbose = not args.quiet    
+        verbose = not args.quiet
         byteweiser = main.ByteWeiser()
         byteweiser.compare_and_replace(args.input_file, args.output_file,
                                        args.buffer_size, args.simulate,

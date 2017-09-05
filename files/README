@@ -1,7 +1,7 @@
 
 README
 
-    Binary files    
+    Binary files
 
         In case you want to fiddle around with ByteWeiser in a pure shell
         environment, you can use these binary files, each with two-thirds of
@@ -19,9 +19,9 @@ README
             $ cat foot >> file2
 
         They are just (useless) files for ByteWeiser testing purposes, only.
-        
+
     Bitmap files
-    
+
         There are also two bitmap images with the same content, but one of
         them with a partial grayscale area, to provide visual results after
         processing them with ByteWeiser.

@@ -28,7 +28,7 @@ You could also use *rsync* with delta compression for that. However, *ByteWeiser
 
 I have tested the performance of *ByteWeiser* and compared it with the results of *rsync*.
 
-For that, I created a file (`file1`) and duplicated it. Then, I edited the duplicate (`file2`) using *Vim* (yes, seriously) and changed a single byte at the end of the file. 
+For that, I created a file (`file1`) and duplicated it. Then, I edited the duplicate (`file2`) using *Vim* (yes, seriously) and changed a single byte at the end of the file.
 
 Notice that the elapsed times are average values, no liability assumed.
 
@@ -63,7 +63,7 @@ Tool | Version | Command | Elapsed time |
 
 ### Remote system
 
-Due to the fact, that *ByteWeiser* only supports local paths for the input and output files, the remote directory must be mounted locally (for example by using *CIFS* or *sshfs*). 
+Due to the fact, that *ByteWeiser* only supports local paths for the input and output files, the remote directory must be mounted locally (for example by using *CIFS* or *sshfs*).
 
 For this test, the target file is located on a *CIFS* mount in `/mnt/foo`.
 
