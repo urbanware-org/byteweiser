@@ -38,12 +38,12 @@ Notice that the elapsed times are average values, no liability assumed.
 
 The tests have been performed on my current system at work:
 
-* *Intel Core i7-4770* CPU @ 3.40GHz
-* 32 GigaByte DDR3 RAM
-* *Seagate Barracuda ST2000DM001* harddisk
-  * SATA 3Gb/s
-  * 4K Sectors
-  * *ext4* file system
+* **CPU:** *Intel Core i7-4770* @ 3.40GHz
+* **RAM:** 32 GigaByte DDR3
+* **Harddisk:** *Seagate Barracuda ST2000DM001*
+  * **Speed:** SATA 3Gb/s
+  * **Sectors:** 4K
+  * **File system:** *ext4*
 
 #### 1 GigaByte
 
