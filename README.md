@@ -5,7 +5,6 @@
 * [Details](#details)
 * [Performance](#performance)
 * [Requirements](#requirements)
-* [Notice](#notice)
 * [Useless facts](#useless-facts)
 
 ----
@@ -34,15 +33,15 @@ Details can be found inside the [wiki](https://github.com/urbanware-org/byteweis
 
 ## Requirements
 
+### Runtime environment 
+
 In order to run *ByteWeiser*, the *Python* 3.x framework must be installed on the system.
 
 There is no official version for *Python* 2.x, but if you need that for whatever reason, you can try refactoring the syntax from *Python* 3.x to version 2.x using the *[3to2](https://pypi.python.org/pypi/3to2)* tool.
 
 However, there is no guarantee that this works properly or at all.
 
-[Top](#byteweiser-)
-
-## Notice
+### Operating system
 
 The *ByteWeiser* project has been tested on *Linux* as well as *Windows*.
 
