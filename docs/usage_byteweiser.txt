@@ -7,7 +7,8 @@ USAGE (byteweiser.py)
         2.  General stuff
           2.1  Overview of all command-line arguments
           2.2  Requirements
-          2.3  Notice
+             2.2.1  Runtime environment
+             2.2.2  Operating system
         3.  Compare and replace
           3.1  Compare two files
           3.2  Replace different blocks
@@ -30,23 +31,27 @@ USAGE (byteweiser.py)
 
         2.2 Requirements
 
-            In order to run ByteWeiser, the Python 3.x framework must be
-            installed on the system.
+            2.2.1 Runtime environment
+            
+                In order to run ByteWeiser, the Python 3.x framework must be
+                installed on the system.
 
-            There is no official version for the Python 2.x framework, but if
-            you need that for whatever reason, you can try refactoring the
-            syntax from Python 3.x to version 2.x using the '3to2' tool.
+                There is no official version for the Python 2.x framework, but
+                if you need that for whatever reason, you can try refactoring
+                the syntax from Python 3.x to version 2.x using the '3to2'
+                tool.
 
-            However, there is no guarantee that this works properly or at all.
+                However, there is no guarantee that this works properly or at
+                all.
 
                 https://pypi.python.org/pypi/3to2
 
-        2.3 Notice
+            2.2.2 Operating system
 
-            The ByteWeiser project has been tested on Linux and Windows.
+                The ByteWeiser project has been tested on Linux and Windows.
 
-            However, it should work on other platforms, but also without any
-            guarantee.
+                However, it should work on other platforms, but also without
+                any guarantee.
 
     3. Compare and replace
 
