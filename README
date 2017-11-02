@@ -13,7 +13,8 @@ README (ByteWeiser)
     Definition
 
         The ByteWeiser project is a simple file synchronization tool that
-        compares files blockwise and replaces different bytes.
+        compares two files blockwise and only replaces the different bytes to
+        reduce write operations on the hard disk.
 
         Further information can be found on the GitHub repository of the
         project.
