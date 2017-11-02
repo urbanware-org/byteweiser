@@ -22,6 +22,12 @@ Initially developed to accelerate the backup of virtual machine images, *ByteWei
 
 You could also use *rsync* with delta compression for that. However, *ByteWeiser* seems to be faster in some cases. Both tools have a completely different functional principle, where *ByteWeiser* is the one that "mindlessly" (simply) processes the data instead of using algorithms and checksums.
 
+## Performance
+
+I have tested the performance of *ByteWeiser* and compared it with the results of *rsync*.
+
+Details can be found inside the [wiki](https://github.com/urbanware-org/byteweiser/wiki/Performance).
+
 [Top](#byteweiser-)
 
 ## Requirements
@@ -36,7 +42,7 @@ However, there is no guarantee that this works properly or at all.
 
 ## Notice
 
-The *ByteWeiser* project has been written on *Linux* and only been tested on that platform, yet.
+The *ByteWeiser* project has been tested on *Linux* as well as *Windows*.
 
 Nevertheless, it should work on other platforms, but also without any guarantee.
 
