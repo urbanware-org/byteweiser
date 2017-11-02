@@ -12,13 +12,15 @@
 
 ## Definition
 
-The *ByteWeiser* project is a simple file synchronization tool that compares two files blockwise and replaces the different bytes.
+The *ByteWeiser* project is a simple file synchronization tool that compares two files blockwise and only replaces the different bytes to reduce write operations on the hard disk.
 
 [Top](#byteweiser-)
 
 ## Details
 
 Initially developed to accelerate the backup of virtual machine images, *ByteWeiser* compares the binary data of two files, by running through them block by block. If the current block of the output file is different from that of the input file, the block of the output file will be overwritten with the one from the input file.
+
+With its operating principle it reduces the write operations on the hard disk.
 
 You could also use *rsync* with delta compression for that. However, *ByteWeiser* seems to be faster in some cases. Both tools have a completely different functional principle, where *ByteWeiser* is the one that "mindlessly" (simply) processes the data instead of using algorithms and checksums.
 
