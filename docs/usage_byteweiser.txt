@@ -14,8 +14,9 @@ USAGE (byteweiser.py)
 
     1. Definition
 
-        Simple file synchronization tool that compares files blockwise and
-        replaces different bytes.
+        Simple file synchronization tool that compares two files blockwise and
+        only replaces the different bytes to reduce write operations on the
+        hard disk.
 
     2. General stuff
 
@@ -42,8 +43,7 @@ USAGE (byteweiser.py)
 
         2.3 Notice
 
-            The ByteWeiser project has been written on Linux and only been
-            tested on that platform, yet.
+            The ByteWeiser project has been tested on Linux and Windows.
 
             However, it should work on other platforms, but also without any
             guarantee.
