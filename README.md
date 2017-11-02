@@ -24,67 +24,6 @@ You could also use *rsync* with delta compression for that. However, *ByteWeiser
 
 [Top](#byteweiser-)
 
-## Performance
-
-I have tested the performance of *ByteWeiser* and compared it with the results of *rsync*.
-
-For that, I created a file (`file1`) and duplicated it. Then, I edited the duplicate (`file2`) using *Vim* (yes, seriously) and changed a single byte at the end of the file.
-
-Notice that the elapsed times are average values, no liability assumed.
-
-### Local system
-
-#### Environment
-
-The tests have been performed on my current system at work:
-
-* **CPU:** *Intel Core i7-4770* @ 3.40GHz
-* **RAM:** 32 GigaByte DDR3
-* **Harddisk:** *Seagate Barracuda ST2000DM001*
-  * **Speed:** SATA 3Gb/s
-  * **Sectors:** 4K
-  * **File system:** *ext4*
-
-#### 1 GigaByte
-
-Tool | Version | Command | Elapsed time |
------------- | ------------- | ------------ | ------------
-*rsync* | 3.0.6 | `rsync -avv file1 file2` | 00:11 min
-*rsync* | 3.0.6 | `rsync -avv --no-whole-file file1 file2` | 00:10 min
-*ByteWeiser* | 1.0.0-rc1 | `byteweiser.py -i file1 -o file2` | 00:03 min
-
-#### 10 GigaByte
-
-Tool | Version | Command | Elapsed time |
------------- | ------------- | ------------ | ------------
-*rsync* | 3.0.6 | `rsync -avv file1 file2` | 03:12 min
-*rsync* | 3.0.6 | `rsync -avv --no-whole-file file1 file2` | 03:52 min
-*ByteWeiser* | 1.0.0-rc1 | `byteweiser.py -i file1 -o file2` | 02:42 min
-
-### Remote system
-
-Due to the fact, that *ByteWeiser* only supports local paths for the input and output files, the remote directory must be mounted locally (for example by using *CIFS* or *sshfs*).
-
-For this test, the target file is located on a *CIFS* mount in `/mnt/foo`.
-
-#### 1 GigaByte
-
-Tool | Version | Command | Elapsed time |
------------- | ------------- | ------------ | ------------
-*rsync* | 3.0.6 | `rsync -avv file1 /mnt/foo/file2` | 00:09 min
-*rsync* | 3.0.6 | `rsync -avv --no-whole-file file1 /mnt/foo/file2` | 00:21 min
-*ByteWeiser* | 1.0.0-rc1 | `byteweiser.py -i file1 -o /mnt/foo/file2` | 00:09 min
-
-#### 10 GigaByte
-
-Tool | Version | Command | Elapsed time |
------------- | ------------- | ------------ | ------------
-*rsync* | 3.0.6 | `rsync -avv file1 /mnt/foo/file2` | 01:38 min
-*rsync* | 3.0.6 | `rsync -avv --no-whole-file file1 /mnt/foo/file2` | 04:12 min
-*ByteWeiser* | 1.0.0-rc1 | `byteweiser.py -i file1 -o /mnt/foo/file2` | 01:34 min
-
-[Top](#byteweiser-)
-
 ## Requirements
 
 In order to run *ByteWeiser*, the *Python* 3.x framework must be installed on the system.
