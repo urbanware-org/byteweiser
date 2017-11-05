@@ -40,6 +40,8 @@ def main():
     p.add_switch("-q", "--quiet", "disable output", "quiet", True, False)
     p.add_switch("-s", "--simulate", "do not change the output file",
                  "simulate", True, False)
+    p.add_switch(None, "--version", "print the version number and exit", None,
+                 True, False)
 
     if len(sys.argv) == 1:
         p.error("At least one required argument is missing.")
