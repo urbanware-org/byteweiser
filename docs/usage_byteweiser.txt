@@ -32,7 +32,7 @@ USAGE (byteweiser.py)
         2.2 Requirements
 
             2.2.1 Runtime environment
-            
+
                 In order to run ByteWeiser, the Python 3.x framework must be
                 installed on the system.
 
