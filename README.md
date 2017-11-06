@@ -33,7 +33,7 @@ Details can be found inside the [wiki](https://github.com/urbanware-org/byteweis
 
 ## Requirements
 
-### Runtime environment 
+### Runtime environment
 
 In order to run *ByteWeiser*, the *Python* 3.x framework must be installed on the system.
 
