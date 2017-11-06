@@ -5,7 +5,7 @@ CHANGELOG (ByteWeiser)
     
         + Added an optional command-line argument to disable the progress
           percentage information.
-        + Added the missing usage information for the "--version" command-line
+        + Added the missing usage information for the '--version' command-line
           argument.        
 
         * Revised the method to calculate the progress percentage inside the
