@@ -37,6 +37,8 @@ def main():
     # Optional arguments
     p.add_avalue("-b", "--buffer-size", "buffer size in bytes", "buffer_size",
                  4096, False)
+    p.add_switch(None, "--no-percent", "do not display the status in percent",
+                 "percent", True, False)
     p.add_switch("-q", "--quiet", "disable output", "quiet", True, False)
     p.add_switch("-s", "--simulate", "do not change the output file",
                  "simulate", True, False)
