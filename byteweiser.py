@@ -60,7 +60,7 @@ def main():
         byteweiser = main.ByteWeiser()
         byteweiser.compare_and_replace(args.input_file, args.output_file,
                                        args.buffer_size, args.simulate,
-                                       verbose, not(progress))
+                                       verbose, not(args.progress))
     except Exception as e:
         p.error(e)
 
