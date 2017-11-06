@@ -39,12 +39,12 @@ USAGE (byteweiser.py)
                 There is no official version for the Python 2.x framework, but
                 if you need that for whatever reason, you can try refactoring
                 the syntax from Python 3.x to version 2.x using the '3to2'
-                tool.
+                tool. For details see:
+                
+                    https://pypi.python.org/pypi/3to2
 
                 However, there is no guarantee that this works properly or at
-                all.
-
-                https://pypi.python.org/pypi/3to2
+                all.                
 
             2.2.2 Operating system
 
