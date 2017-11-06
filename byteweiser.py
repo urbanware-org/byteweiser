@@ -37,8 +37,8 @@ def main():
     # Optional arguments
     p.add_avalue("-b", "--buffer-size", "buffer size in bytes", "buffer_size",
                  4096, False)
-    p.add_switch(None, "--no-percent", "do not display the status in percent",
-                 "percent", True, False)
+    p.add_switch(None, "--no-progress", "do not display the process " \
+                 "percentage", "progress", True, False)
     p.add_switch("-q", "--quiet", "disable output", "quiet", True, False)
     p.add_switch("-s", "--simulate", "do not change the output file",
                  "simulate", True, False)
@@ -60,7 +60,7 @@ def main():
         byteweiser = main.ByteWeiser()
         byteweiser.compare_and_replace(args.input_file, args.output_file,
                                        args.buffer_size, args.simulate,
-                                       verbose)
+                                       verbose, not(progress))
     except Exception as e:
         p.error(e)
 
