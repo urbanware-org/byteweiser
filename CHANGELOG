@@ -1,6 +1,16 @@
 
 CHANGELOG (ByteWeiser)
 
+    Next version (outstanding)
+    
+        + Added an optional command-line argument to disable the progress
+          percentage information.
+        + Added the missing usage information for the "--version" command-line
+          argument.        
+
+        * Revised the method to calculate the progress percentage inside the
+          main core module.
+
     Version 1.0.0 (2017-08-07)
 
         * First official release of this major version.
