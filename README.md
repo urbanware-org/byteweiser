@@ -14,7 +14,7 @@
 
 The *ByteWeiser* project is a simple file synchronization tool that compares two files blockwise and only replaces the different bytes to reduce write operations on the hard disk.
 
-[Top](#byteweiser-)
+[Top](#)
 
 ## Details
 
@@ -30,7 +30,7 @@ The performance of *ByteWeiser* has been tested and compared with the results of
 
 Details can be found [here](https://github.com/urbanware-org/byteweiser/wiki/Performance) inside the wiki.
 
-[Top](#byteweiser-)
+[Top](#)
 
 ## Requirements
 
@@ -48,18 +48,18 @@ The *ByteWeiser* project has been tested on *Linux* as well as *Windows*.
 
 Nevertheless, it should work on other platforms, but also without any guarantee.
 
-[Top](#byteweiser-)
+[Top](#)
 
 ## Documentation
 
 Inside the `docs` sub-directory, there are plain text files containing the documentation for each component with further information and usage examples.
 
-[Top](#byteweiser-)
+[Top](#)
 
 ## Useless facts
 
 * Actually, the project should be called "BlockWeiser", because the binary data is being processed blockwise instead of bytewise. If you want it bytewise, just set the buffer size to `1`.
 * The project name is derived from the German adjective "byteweise" ("bytewise").
 
-[Top](#byteweiser-)
+[Top](#)
 
