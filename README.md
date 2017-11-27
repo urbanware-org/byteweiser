@@ -5,6 +5,7 @@
 * [Details](#details)
 * [Performance](#performance)
 * [Requirements](#requirements)
+* [Documentation](#documentation)
 * [Useless facts](#useless-facts)
 
 ----
@@ -49,7 +50,7 @@ Nevertheless, it should work on other platforms, but also without any guarantee.
 
 [Top](#byteweiser-)
 
-## Usage
+## Documentation
 
 Inside the `docs` sub-directory, there are plain text files containing the documentation for each component with further information and usage examples.
 
@@ -61,3 +62,4 @@ Inside the `docs` sub-directory, there are plain text files containing the docum
 * The project name is derived from the German adjective "byteweise" ("bytewise").
 
 [Top](#byteweiser-)
+
