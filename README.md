@@ -28,7 +28,7 @@ You could also use *rsync* with delta compression for that. However, *ByteWeiser
 
 The performance of *ByteWeiser* has been tested and compared with the results of *rsync*.
 
-Details can be found [here](https://github.com/urbanware-org/byteweiser/wiki/Performance) inside the wiki.
+Details can be found [here](https://github.com/urbanware-org/byteweiser/wiki/Performance) inside the [wiki]((https://github.com/urbanware-org/byteweiser/wiki).
 
 [Top](#)
 
