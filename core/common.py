@@ -4,13 +4,13 @@
 # ============================================================================
 # ByteWeiser - Byte comparison and replacement tool
 # Common core module
-# Copyright (C) 2017 by Ralf Kilian
+# Copyright (C) 2018 by Ralf Kilian
 # Distributed under the MIT License (https://opensource.org/licenses/MIT)
 #
 # GitHub: https://github.com/urbanware-org/byteweiser
 # ============================================================================
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
 def get_file_size(file_path):
     """
