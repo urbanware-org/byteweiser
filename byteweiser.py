@@ -4,7 +4,7 @@
 # ============================================================================
 # ByteWeiser - Byte comparison and replacement tool
 # Main script
-# Copyright (C) 2017 by Ralf Kilian
+# Copyright (C) 2018 by Ralf Kilian
 # Distributed under the MIT License (https://opensource.org/licenses/MIT)
 #
 # GitHub: https://github.com/urbanware-org/byteweiser
@@ -12,6 +12,7 @@
 
 import os
 import sys
+
 
 def main():
     from core import clap
@@ -25,19 +26,19 @@ def main():
         sys.exit(1)
 
     p.set_description("Compare two files and replace different bytes.")
-    p.set_epilog("Further information and usage examples can be found " \
+    p.set_epilog("Further information and usage examples can be found "
                  "inside the documentation file for this script.")
 
     # Required arguments
-    p.add_avalue("-i", "--input-file", "source file where to read the data " \
+    p.add_avalue("-i", "--input-file", "source file where to read the data "
                  "from", "input_file", None, True)
-    p.add_avalue("-o", "--output-file", "destination file where to write " \
+    p.add_avalue("-o", "--output-file", "destination file where to write "
                  "data into", "output_file", None, True)
 
     # Optional arguments
     p.add_avalue("-b", "--buffer-size", "buffer size in bytes", "buffer_size",
                  4096, False)
-    p.add_switch(None, "--no-progress", "do not display the process " \
+    p.add_switch(None, "--no-progress", "do not display the process "
                  "percentage", "progress", True, False)
     p.add_switch("-q", "--quiet", "disable output", "quiet", True, False)
     p.add_switch("-s", "--simulate", "do not change the output file",
@@ -64,8 +65,8 @@ def main():
     except Exception as e:
         p.error(e)
 
+
 if __name__ == "__main__":
     main()
 
 # EOF
-
