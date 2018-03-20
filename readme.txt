@@ -4,10 +4,9 @@ README (ByteWeiser)
     Project
 
         ByteWeiser
-        Version 1.0.1
-        Copyright (C) 2017 by Ralf Kilian
+        Version 1.0.2
+        Copyright (C) 2018 by Ralf Kilian
 
-        Website: http://www.urbanware.org
         GitHub: https://github.com/urbanware-org/byteweiser
 
     Definition
@@ -27,6 +26,19 @@ README (ByteWeiser)
 
             https://opensource.org/licenses/MIT
 
+    Requirements
+
+        In order to run ByteWeiser, the Python 3.x framework must be installed
+        on the system.
+
+        There is no official version for Python 2.x, but if you need that for
+        whatever reason, you can try refactoring the syntax from Python 3.x to
+        version 2.x using the '3to2' tool:
+
+            https://pypi.python.org/pypi/3to2
+
+        However, there is no guarantee that this works properly or at all.
+
     Usage
 
         For fundamental documentation as well as some usage examples for each
@@ -42,4 +54,4 @@ README (ByteWeiser)
         All trademarks belong to their respective owners.
 
         Errors and omissions excepted.
-
+        
