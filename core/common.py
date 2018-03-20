@@ -12,16 +12,18 @@
 
 __version__ = "1.0.2"
 
+
 def get_file_size(file_path):
     """
         Get the size of a file in bytes.
     """
-    f = open(file_path, "rb")
-    f.seek(0, 2)
-    file_size = f.tell()
-    f.close()
+    input_file = open(file_path, "rb")
+    input_file.seek(0, 2)
+    file_size = input_file.tell()
+    input_file.close()
 
     return int(file_size)
+
 
 def get_version():
     """
@@ -30,4 +32,3 @@ def get_version():
     return __version__
 
 # EOF
-
