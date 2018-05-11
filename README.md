@@ -6,7 +6,7 @@
 *   [Performance](#performance)
 *   [Requirements](#requirements)
 *   [Documentation](#documentation)
-*   [Contact][#contact]
+*   [Contact](#contact)
 *   [Useless facts](#useless-facts)
 
 ----
