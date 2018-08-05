@@ -8,6 +8,8 @@ README (ByteWeiser)
         Copyright (C) 2018 by Ralf Kilian
 
         GitHub: https://github.com/urbanware-org/byteweiser
+        GitLab: https://gitlab.com/urbanware-org/byteweiser
+
 
     Definition
 
@@ -59,4 +61,3 @@ README (ByteWeiser)
         All trademarks belong to their respective owners.
 
         Errors and omissions excepted.
-
