@@ -3,20 +3,22 @@
 
 # ============================================================================
 # Clap - Command-line argument parser module
-# Copyright (C) 2015 by Ralf Kilian
+# Copyright (C) 2018 by Ralf Kilian
 # Distributed under the MIT License (https://opensource.org/licenses/MIT)
 #
-# Website: http://www.urbanware.org
 # GitHub: https://github.com/urbanware-org/clap
+# GitLab: https://gitlab.com/urbanware-org/clap
 # ============================================================================
 
-__version__ = "1.1.8"
+__version__ = "1.1.10"
+
 
 def get_version():
     """
         Return the version of this module.
     """
     return __version__
+
 
 class Parser(object):
     """
@@ -26,6 +28,7 @@ class Parser(object):
     __arg_grp_req = None
     __arg_parser = None
     __is_argparser = False
+    __conflict_handler = "resolve"  # used by OptionParser, only
 
     def __init__(self):
         try:
@@ -38,19 +41,20 @@ class Parser(object):
             self.__is_argparser = True
             return
         except ImportError:
-            # Pass and use a separate error handler statement to avoid
-            # unnecessarily convoluted code
+            # Ignore the exception and proceed with the fallback
             pass
 
         try:
             from optparse import OptionParser
-            self.__arg_parser = OptionParser(conflict_handler="resolve")
+            self.__arg_parser = \
+                OptionParser(conflict_handler=self.__conflict_handler)
             self.__arg_grp_req = \
                 self.__arg_parser.add_option_group("Required arguments")
             self.__arg_grp_opt = \
                 self.__arg_parser.add_option_group("Optional arguments")
             return
         except ImportError:
+            # This should never happen
             raise ImportError("Failed to initialize an argument parser.")
 
     def add_avalue(self, arg_short, arg_long, arg_help, arg_dest, arg_default,
@@ -63,7 +67,7 @@ class Parser(object):
         else:
             obj = self.__arg_grp_opt
 
-        if not arg_default == None:
+        if arg_default is not None:
             # Enclose the value with quotes in case it is not an integer
             quotes = "'"
             try:
@@ -81,7 +85,7 @@ class Parser(object):
                     (quotes, str(arg_default), quotes)
 
         if self.__is_argparser:
-            if arg_short == None:
+            if arg_short is None:
                 obj.add_argument(arg_long, help=arg_help, dest=arg_dest,
                                  default=arg_default, required=arg_required)
             else:
@@ -89,7 +93,7 @@ class Parser(object):
                                  dest=arg_dest, default=arg_default,
                                  required=arg_required)
         else:
-            if arg_short == None:
+            if arg_short is None:
                 obj.add_option(arg_long, help=arg_help, dest=arg_dest,
                                default=arg_default)
             else:
@@ -107,7 +111,7 @@ class Parser(object):
             obj = self.__arg_grp_opt
 
         if self.__is_argparser:
-            if arg_short == None:
+            if arg_short is None:
                 obj.add_argument(arg_long, help=arg_help, dest=arg_dest,
                                  choices=arg_choices, required=arg_required)
             else:
@@ -115,7 +119,7 @@ class Parser(object):
                                  dest=arg_dest, choices=arg_choices,
                                  required=arg_required)
         else:
-            if arg_short == None:
+            if arg_short is None:
                 obj.add_option(arg_long, help=arg_help, dest=arg_dest,
                                choices=arg_choices)
             else:
@@ -147,7 +151,7 @@ class Parser(object):
             arg_store = "store_false"
 
         if self.__is_argparser:
-            if arg_short == None:
+            if arg_short is None:
                 obj.add_argument(arg_long, help=arg_help, dest=arg_dest,
                                  action=arg_store, required=arg_required)
             else:
@@ -155,7 +159,7 @@ class Parser(object):
                                  dest=arg_dest, action=arg_store,
                                  required=arg_required)
         else:
-            if arg_short == None:
+            if arg_short is None:
                 obj.add_option(arg_long, help=arg_help, dest=arg_dest,
                                action=arg_store)
             else:
@@ -166,9 +170,9 @@ class Parser(object):
         """
             Check the dependency of a command-line argument.
         """
-        if not dependency == None:
-            if arg_value == None or str(arg_value) == "":
-                raise Exception("The '%s' argument depends on %s'." % \
+        if dependency is not None:
+            if arg_value is None or str(arg_value) == "":
+                raise Exception("The '%s' argument depends on %s'." %
                                 (arg_name, dependency))
 
     def error(self, obj):
@@ -210,4 +214,3 @@ class Parser(object):
         self.__arg_parser.epilog = string.strip()
 
 # EOF
-
