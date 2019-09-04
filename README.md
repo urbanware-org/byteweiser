@@ -37,7 +37,7 @@ Details can be found [here](../../wiki/Performance) inside the [wiki](../../wiki
 
 ### Runtime environment
 
-In order to run *ByteWeiser*, the *Python* 3.x framework must be installed on the system.
+In order to run *ByteWeiser*, the *Python* 3.x framework (version 3.2 or higher is recommended) must be installed on the system.
 
 There is no official version for *Python* 2.x, but if you need that for whatever reason, you can try refactoring the syntax from *Python* 3.x to version 2.x using the *[3to2](https://pypi.python.org/pypi/3to2)* tool.
 
