@@ -61,7 +61,7 @@ Inside the `docs` sub-directory, there are plain text files containing the docum
 
 Any suggestions, questions, bugs to report or feedback to give?
 
-You can contact me by sending an email to <dev@urbanware.org>.
+You can contact me by sending an email to [dev@urbanware.org](mailto:dev@urbanware.org).
 
 Further information can be found inside the `contact.txt` file.
 
