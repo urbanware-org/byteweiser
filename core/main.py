@@ -22,6 +22,7 @@ class ByteWeiser():
     """
         Class for the ByteWeiser compare-and-replace process.
     """
+    __file_hashes = True
     __file_input = None
     __file_input_size = 0
     __file_output = None
@@ -50,7 +51,8 @@ class ByteWeiser():
         return
 
     def compare_and_replace(self, file_input, file_output, buffer_size=4096,
-                            simulate=False, verbose=True, progress=True):
+                            simulate=False, verbose=True, progress=True,
+                            hashes=True):
         """
             Main function to compare and replace the bytes (or the blocks).
         """
@@ -65,6 +67,7 @@ class ByteWeiser():
             raise Exception("The path of the input and output file must not "
                             "be the same.")
 
+        self.__file_hashes = hashes
         self.__file_input = file_input
         self.__file_input_size = common.get_file_size(file_input)
         self.__file_output = file_output
@@ -230,7 +233,7 @@ class ByteWeiser():
                    self.format_string("byte", self.__untainted_bytes)))
             print()
 
-            if not self.__simulate:
+            if self.__file_hashes and not self.__simulate:
                 sys.stdout.write("    Generating file hashes. Please wait.\r")
                 sys.stdout.flush()
                 file_input_hash = common.get_sha256sum(self.__file_input)
