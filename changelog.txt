@@ -1,6 +1,15 @@
 
 CHANGELOG (ByteWeiser)
 
+    Next release (outstanding)
+
+        + Added a method to generate SHA256 file hashes (to verify that the
+          input and output files are both identical).
+        + Added an optional command-line argument to disable the file hash
+          verification.
+
+        * Revised the output messages in general.
+
     Version 1.0.1 (2017-11-06)
 
         + Added an optional command-line argument to disable the progress
