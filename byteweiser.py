@@ -39,6 +39,8 @@ def main():
     # Optional arguments
     p.add_avalue("-b", "--buffer-size", "buffer size in bytes", "buffer_size",
                  4096, False)
+    p.add_switch(None, "--no-hashes", "do not use file hash comparison",
+                 "no_hash", True, False)
     p.add_switch(None, "--no-progress", "do not display the process "
                  "percentage", "no_progress", True, False)
     p.add_switch("-q", "--quiet", "disable output", "quiet", True, False)
@@ -58,12 +60,13 @@ def main():
 
     args = p.parse_args()
     try:
+        hashes = not args.no_hash
         progress = not args.no_progress
         verbose = not args.quiet
         byteweiser = main.ByteWeiser()
         byteweiser.compare_and_replace(args.input_file, args.output_file,
                                        args.buffer_size, args.simulate,
-                                       verbose, progress)
+                                       verbose, progress, hashes)
     except Exception as e:
         p.error(e)
 
