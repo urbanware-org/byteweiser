@@ -230,6 +230,21 @@ class ByteWeiser():
                    self.format_string("byte", self.__untainted_bytes)))
             print()
 
+            if not self.__simulate:
+                sys.stdout.write("    Generating file hashes. Please wait.\r")
+                sys.stdout.flush()
+                file_input_hash = common.get_sha256sum(self.__file_input)
+                file_output_hash = common.get_sha256sum(self.__file_output)
+
+                if file_input_hash == file_output_hash:
+                    print("    Input and output file are identical.")
+                    print("    SHA256: %s" % file_input_hash)
+                    print()
+                else:
+                    print("    Input and output file are not identical.")
+                    print("    Something went wrong.")
+                    print()
+
             print("Process completed.")
             print()
 
