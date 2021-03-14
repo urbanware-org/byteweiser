@@ -13,6 +13,8 @@
 
 __version__ = "1.0.2"
 
+import hashlib
+
 
 def get_file_size(file_path):
     """
@@ -26,10 +28,23 @@ def get_file_size(file_path):
     return int(file_size)
 
 
+def get_sha256sum(input_file):
+    """
+        Get the SHA256 hash from a file.
+    """
+    ifile = open(input_file, 'rb')
+    data = ifile.read()
+    hlib = hashlib.sha256()
+    hlib.update(data)
+    sha256_hash = hlib.hexdigest()
+    return sha256_hash
+
+
 def get_version():
     """
         Return the version of this module.
     """
     return __version__
+
 
 # EOF
