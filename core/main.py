@@ -44,6 +44,8 @@ class ByteWeiser():
     __padding = 0
     __timestamp = None
 
+    __version__ = common.get_version()
+
     def __init__(self):
         return
 
@@ -154,43 +156,43 @@ class ByteWeiser():
         """
         if self.__verbose:
             print()
-            print("--[ Input file ]".ljust(78, "-"))
+            print("Input file:")
             print()
-            print("File path:          %s" % self.__file_input)
-            print("File size:          %s bytes" %
+            print("    File path:          %s" % self.__file_input)
+            print("    File size:          %s bytes" %
                   (str(self.__file_input_size).rjust(self.__padding, " ")))
             print()
-            print("Full blocks:        %s %s\t(with buffer size %s)" %
+            print("    Full blocks:        %s %s (with buffer size %s)" %
                   ((str(self.__byte_blocks).rjust(self.__padding, " "),
                     self.format_string("block", self.__byte_blocks),
                     self.__buffer_size)))
             if self.__byte_remainder == 0:
-                print("Remainder:          %s bytes" %
+                print("    Remainder:          %s bytes" %
                       ("0".rjust(self.__padding, " ")))
             else:
-                print("Remainder:          %s %s\t(partial block %s)" %
+                print("    Remainder:          %s %s\t(partial block %s)" %
                       (str(self.__byte_remainder).rjust(self.__padding, " "),
                        self.format_string("byte", self.__byte_remainder),
                        str(self.__byte_blocks + 1)))
             print()
 
-            print("--[ Output file ]".ljust(78, "-"))
+            print("Output file:")
             print()
-            print("File path:          %s" % self.__file_output)
-            print("File size:          %s bytes" %
+            print("    File path:          %s" % self.__file_output)
+            print("    File size:          %s bytes" %
                   str(self.__file_output_size).rjust(self.__padding, " "))
             print()
 
             if self.__simulate:
-                print("--[ ByteWeiser process (simulation) ]".ljust(78, "-"))
+                print("ByteWeiser process (simulation):")
             else:
-                print("--[ ByteWeiser process ]".ljust(78, "-"))
+                print("ByteWeiser process:")
             print()
             if not progress:
-                sys.stdout.write("Processing files. Please wait.\r")
+                sys.stdout.write("    Processing files. Please wait.\r")
                 sys.stdout.flush()
             else:
-                sys.stdout.write("Total progress:               0 %\r")
+                sys.stdout.write("    Total progress:               0 %\r")
                 sys.stdout.flush()
 
     def print_output_info(self, progress):
@@ -204,29 +206,31 @@ class ByteWeiser():
             percent = ("%.4f" % percent)
 
             if progress:
-                print("Total progress:     %s %% (finished, elapsed time: %s)"
+                print(("    Total progress:     %s %% "
+                       "(finished, elapsed time: %s)")
                       % (str("100").rjust(self.__padding, " "),
                          (dt.now() - self.__timestamp)))
             else:
-                print("Finished. Elapsed time: %s"
+                print("    Finished. Elapsed time: %s"
                       % (dt.now() - self.__timestamp))
             print()
-            print("Replaced blocks:    %s %s" %
+            print("    Replaced blocks:    %s %s" %
                   (str(self.__replaced_blocks).rjust(self.__padding, " "),
                    self.format_string("block", self.__replaced_blocks)))
-            print("Replaced bytes:     %s %s\t(%s %%)" %
+            print("    Replaced bytes:     %s %s\t(%s %%)" %
                   (str(self.__replaced_bytes).rjust(self.__padding, " "),
                    self.format_string("byte", self.__replaced_bytes),
                    percent))
             print()
-            print("Untainted blocks:   %s %s" %
+            print("    Untainted blocks:   %s %s" %
                   (str(self.__untainted_blocks).rjust(self.__padding, " "),
                    self.format_string("block", self.__untainted_blocks)))
-            print("Untainted bytes:    %s %s" %
+            print("    Untainted bytes:    %s %s" %
                   (str(self.__untainted_bytes).rjust(self.__padding, " "),
                    self.format_string("byte", self.__untainted_bytes)))
             print()
-            print("-" * 78)
+
+            print("Process completed.")
             print()
 
     def print_status(self, block):
@@ -243,7 +247,7 @@ class ByteWeiser():
                         (self.__chars_index + 1) % len(self.__chars_busy)
                     percent = int(float(block) / self.__byte_blocks * 100)
                     percent_string = str(percent).rjust(self.__padding, " ")
-                    sys.stdout.write("Total progress:     %s %s" %
+                    sys.stdout.write("    Total progress:     %s %s" %
                                      (percent_string + " %",
                                       self.__chars_busy[self.__chars_index] +
                                       "\r"))
