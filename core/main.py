@@ -165,7 +165,7 @@ class ByteWeiser():
             print("    File size:          %s bytes" %
                   (str(self.__file_input_size).rjust(self.__padding, " ")))
             print()
-            print("    Full blocks:        %s %s (with buffer size %s)" %
+            print("    Full blocks:        %s %s\t(with buffer size %s)" %
                   ((str(self.__byte_blocks).rjust(self.__padding, " "),
                     self.format_string("block", self.__byte_blocks),
                     self.__buffer_size)))
