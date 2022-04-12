@@ -258,7 +258,7 @@ class ByteWeiser():
         if self.__verbose:
             try:
                 percent = float(block) / self.__byte_blocks * 100
-                if self.__bytes_processed < 1000000:
+                if self.__bytes_processed <= self.__buffer_size ** 2:
                     self.__bytes_processed += self.__buffer_size
                 else:
                     self.__chars_index = \
