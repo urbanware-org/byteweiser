@@ -29,6 +29,8 @@ class ByteWeiser():
     __file_output_size = 0
 
     __buffer_size = 4096
+    __buffer_size_min = 1024
+    __buffer_size_max = 16384
     __simulate = False
     __verbose = True
 
@@ -58,6 +60,7 @@ class ByteWeiser():
         """
         file_input = os.path.abspath(file_input)
         file_output = os.path.abspath(file_output)
+        buffer_size = int(buffer_size)
 
         pv.path(file_input, "input", True, True)
         pv.path(file_output, "output", True, True)
@@ -67,13 +70,20 @@ class ByteWeiser():
             raise Exception("The path of the input and output file must not "
                             "be the same.")
 
+        if buffer_size < self.__buffer_size_min:
+            raise Exception("The minimal buffer size is %s bytes." %
+                            str(self.__buffer_size_min))
+        elif buffer_size > self.__buffer_size_max:
+            raise Exception("The maximal buffer size is %s bytes." %
+                            str(self.__buffer_size_max))
+
         self.__file_hashes = hashes
         self.__file_input = file_input
         self.__file_input_size = common.get_file_size(file_input)
         self.__file_output = file_output
         self.__file_output_size = common.get_file_size(file_output)
 
-        self.__buffer_size = int(buffer_size)
+        self.__buffer_size = buffer_size
         self.__simulate = simulate
         self.__verbose = verbose
 
