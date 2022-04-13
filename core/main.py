@@ -171,6 +171,10 @@ class ByteWeiser():
         """
         if not number == 1:
             string += "s"
+        else:
+            string += " "
+        string += " "
+
         return string
 
     def print_input_info(self, progress):
