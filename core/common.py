@@ -46,5 +46,4 @@ def get_version():
     """
     return __version__
 
-
 # EOF
