@@ -28,16 +28,16 @@ def get_file_size(file_path):
     return int(file_size)
 
 
-def get_sha256sum(file_path):
+def get_sha256sum(file_path, buffer_size=4096):
     """
         Get the SHA256 hash from a file.
     """
-    input_file = open(file_path, 'rb')
-    data = input_file.read()
-    hlib = hashlib.sha256()
-    hlib.update(data)
-    sha256_hash = hlib.hexdigest()
-    return sha256_hash
+    sha256_hash = hashlib.sha256()
+    with open(file_path, "rb") as file:
+        for byte_block in iter(lambda: file.read(buffer_size), b""):
+            sha256_hash.update(byte_block)
+
+    return sha256_hash.hexdigest()
 
 
 def get_version():
