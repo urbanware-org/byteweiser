@@ -209,7 +209,7 @@ class ByteWeiser():
                 sys.stdout.write("    Processing files. Please wait.\r")
                 sys.stdout.flush()
             else:
-                sys.stdout.write("    Total progress:               0 %\r")
+                sys.stdout.write("    Total progress:\r")
                 sys.stdout.flush()
 
     def print_output_info(self, progress):
