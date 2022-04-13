@@ -62,6 +62,9 @@ class ByteWeiser():
         file_output = os.path.abspath(file_output)
         buffer_size = int(buffer_size)
 
+        if simulate:
+            hashes = False  # as the files remain untainted
+
         pv.path(file_input, "input", True, True)
         pv.path(file_output, "output", True, True)
         pv.intvalue(buffer_size, "buffer size", True, False, False)
