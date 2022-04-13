@@ -31,6 +31,7 @@ class ByteWeiser():
     __buffer_size = 4096
     __buffer_size_min = 1024
     __buffer_size_max = 16384
+    __percent = 0
     __simulate = False
     __verbose = True
 
@@ -216,10 +217,17 @@ class ByteWeiser():
             Print results after the main process has been finished.
         """
         if self.__verbose:
-            percent = float(self.__replaced_blocks) / self.__byte_blocks * 100
+            if self.__byte_blocks == 0:
+                percent = self.__percent
+            else:
+                percent = \
+                    float(self.__replaced_blocks) / self.__byte_blocks * 100
+
             if percent >= 100:
                 percent = 100
-            percent = ("%.4f" % percent)
+
+            self.__percent = percent        # percent value
+            percent = ("%.4f" % percent)    # percent string (formatted)
 
             if progress:
                 print(("    Total progress:     %s %% "
