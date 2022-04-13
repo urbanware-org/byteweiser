@@ -226,6 +226,8 @@ class ByteWeiser():
         """
             Print results after the main process has been finished.
         """
+        identical = True    # default value for simulation
+
         if self.__verbose:
             if self.__byte_blocks == 0:
                 percent = self.__percent
@@ -271,15 +273,27 @@ class ByteWeiser():
 
                 print()
                 if file_input_hash == file_output_hash:
-                    print("    Input and output file are identical.")
-                    print("    SHA256: %s" % file_input_hash)
-                    print()
+                    identical = True
+                    result = "identical"
+                    status = "Success"
                 else:
-                    print("    Input and output file are not identical.")
-                    print("    Something went wrong.")
-                    print()
+                    identical = False
+                    result = "not identical"
+                    status = "Failure"
 
-            print("Process completed.")
+                print("    Status:  %s (input and output file are %s)" %
+                      (status, result))
+                if identical:
+                    print("    SHA256:  %s" % file_input_hash)
+                print()
+
+            if self.__file_hashes:
+                if identical:
+                    print("Process successfully completed.")
+                else:
+                    print("Process completed with errors.")
+            else:
+                print("Process completed.")
             print()
 
     def print_status(self, block):
