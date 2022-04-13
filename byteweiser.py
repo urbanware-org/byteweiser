@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# ============================================================================
+#
 # ByteWeiser - Byte comparison and replacement tool
 # Main script
 # Copyright (C) 2021 by Ralf Kilian
@@ -9,7 +9,7 @@
 #
 # GitHub: https://github.com/urbanware-org/byteweiser
 # GitLab: https://gitlab.com/urbanware-org/byteweiser
-# ============================================================================
+#
 
 import os
 import sys
