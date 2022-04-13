@@ -81,6 +81,12 @@ class ByteWeiser():
             raise Exception("The maximal buffer size is %s bytes." %
                             str(self.__buffer_size_max))
 
+        self.__replaced_blocks = 0
+        self.__replaced_bytes = 0
+        self.__untainted_blocks = 0
+        self.__untainted_bytes = 0
+        self.__bytes_processed = 0
+
         self.__file_hashes = hashes
         self.__file_input = file_input
         self.__file_input_size = common.get_file_size(file_input)
