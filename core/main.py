@@ -32,6 +32,7 @@ class ByteWeiser():
     __buffer_size_min = 1024
     __buffer_size_max = 16384
     __percent = 0
+    __second = 0
     __simulate = False
     __verbose = True
 
@@ -304,13 +305,10 @@ class ByteWeiser():
             if self.__byte_blocks == 0:
                 percent = self.__percent
             else:
-                percent = \
-                    float(self.__replaced_blocks) / self.__byte_blocks * 100
                 percent = float(block) / self.__byte_blocks * 100
 
-            if self.__bytes_processed <= self.__buffer_size ** 2:
-                self.__bytes_processed += self.__buffer_size
-            else:
+            ts = dt.now()
+            if ts.second > self.__second:
                 self.__chars_index = \
                     (self.__chars_index + 1) % len(self.__chars_busy)
                 percent = int(float(block) / self.__byte_blocks * 100)
@@ -320,6 +318,6 @@ class ByteWeiser():
                                   self.__chars_busy[self.__chars_index] +
                                   "\r"))
                 sys.stdout.flush()
-                self.__bytes_processed = 0
+            self.__second = ts.second
 
 # EOF
