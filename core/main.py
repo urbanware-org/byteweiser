@@ -73,7 +73,7 @@ class ByteWeiser():
 
         if file_input == file_output:
             raise Exception("The path of the input and output file must not "
-                            "be the same.")
+                            "be identical.")
 
         if buffer_size < self.__buffer_size_min:
             raise Exception("The minimal buffer size is %s bytes." %
