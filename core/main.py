@@ -78,9 +78,10 @@ class ByteWeiser():
         if buffer_size < self.__buffer_size_min:
             raise Exception("The minimal buffer size is %s bytes." %
                             str(self.__buffer_size_min))
-        elif buffer_size > self.__buffer_size_max:
-            raise Exception("The maximal buffer size is %s bytes." %
-                            str(self.__buffer_size_max))
+        if self.__buffer_size_max > 0:
+            if buffer_size > self.__buffer_size_max:
+                raise Exception("The maximal buffer size is %s bytes." %
+                                str(self.__buffer_size_max))
 
         self.__replaced_blocks = 0
         self.__replaced_bytes = 0
