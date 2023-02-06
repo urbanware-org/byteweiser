@@ -13,6 +13,7 @@
 
 import os
 import sys
+import pathlib
 from datetime import datetime as dt
 from . import common
 from . import paval as pv
@@ -160,6 +161,7 @@ class ByteWeiser():
 
         if not simulate:
             fh_output.truncate()
+            pathlib.Path(file_output).touch()
         fh_output.close()
         fh_input.close()
 
