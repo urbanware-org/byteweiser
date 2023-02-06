@@ -46,7 +46,6 @@ class ByteWeiser():
 
     __chars_busy = ["/", "-", "\\", "|"]
     __chars_index = 0
-    __bytes_processed = 0
     __padding = 0
     __timestamp = None
 
@@ -87,7 +86,6 @@ class ByteWeiser():
         self.__replaced_bytes = 0
         self.__untainted_blocks = 0
         self.__untainted_bytes = 0
-        self.__bytes_processed = 0
 
         self.__file_hashes = hashes
         self.__file_input = file_input
@@ -106,7 +104,6 @@ class ByteWeiser():
 
         self.__byte_blocks = int(self.__file_input_size / self.__buffer_size)
         self.__byte_remainder = self.__file_input_size % self.__buffer_size
-        self.__bytes_processed = 0
 
         self.print_input_info(progress)
 
