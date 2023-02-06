@@ -105,6 +105,10 @@ class ByteWeiser():
         self.__byte_blocks = int(self.__file_input_size / self.__buffer_size)
         self.__byte_remainder = self.__file_input_size % self.__buffer_size
 
+        if self.__file_input_size < self.__file_output_size:
+            raise Exception("The input file must at least have the same size "
+                            "as the output file.")
+
         self.print_input_info(progress)
 
         if verbose:
