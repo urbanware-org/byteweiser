@@ -109,6 +109,20 @@ class ByteWeiser:
             raise Exception("The input file must at least have the same size "
                             "as the output file.")
 
+        if self.__file_hashes and not self.__simulate:
+            if self.__verbose:
+                print()
+                print("Generating file hashes. Please wait.")
+            file_input_hash = common.get_sha256sum(self.__file_input)
+            file_output_hash = common.get_sha256sum(self.__file_output)
+            if file_input_hash == file_output_hash:
+                if self.__verbose:
+                    print()
+                    print("Nothing to do as the input and output file "
+                          "already are identical.")
+                    print()
+                return
+
         self.print_input_info(progress)
 
         if verbose:
