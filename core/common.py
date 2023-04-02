@@ -16,6 +16,19 @@ __version__ = "1.0.2"
 import hashlib
 
 
+def format_string(string, number):
+    """
+        Format string by adding an 's' for plurals.
+    """
+    if not number == 1:
+        string += "s"
+    else:
+        string += " "
+    string += " "
+
+    return string
+
+
 def get_file_size(file_path):
     """
         Get the size of a file in bytes.

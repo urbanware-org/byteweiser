@@ -168,19 +168,6 @@ class ByteWeiser:
 
         self.print_output_info(progress)
 
-    @staticmethod
-    def format_string(string, number):
-        """
-            Format string by adding an 's' for plurals.
-        """
-        if not number == 1:
-            string += "s"
-        else:
-            string += " "
-        string += " "
-
-        return string
-
     def print_input_info(self, progress):
         """
             Print information about the input data.
@@ -195,7 +182,7 @@ class ByteWeiser:
             print()
             print("    Full blocks:        %s %s\t(with buffer size %s)" %
                   ((str(self.__byte_blocks).rjust(self.__padding, " "),
-                    self.format_string("block", self.__byte_blocks),
+                    common.format_string("block", self.__byte_blocks),
                     self.__buffer_size)))
             if self.__byte_remainder == 0:
                 print("    Remainder:          %s bytes" %
@@ -203,7 +190,7 @@ class ByteWeiser:
             else:
                 print("    Remainder:          %s %s\t(partial block %s)" %
                       (str(self.__byte_remainder).rjust(self.__padding, " "),
-                       self.format_string("byte", self.__byte_remainder),
+                       common.format_string("byte", self.__byte_remainder),
                        str(self.__byte_blocks + 1)))
             print()
 
@@ -256,18 +243,18 @@ class ByteWeiser:
             print()
             print("    Replaced blocks:    %s %s" %
                   (str(self.__replaced_blocks).rjust(self.__padding, " "),
-                   self.format_string("block", self.__replaced_blocks)))
+                   common.format_string("block", self.__replaced_blocks)))
             print("    Replaced bytes:     %s %s\t(%s %%)" %
                   (str(self.__replaced_bytes).rjust(self.__padding, " "),
-                   self.format_string("byte", self.__replaced_bytes),
+                   common.format_string("byte", self.__replaced_bytes),
                    percent))
             print()
             print("    Untainted blocks:   %s %s" %
                   (str(self.__untainted_blocks).rjust(self.__padding, " "),
-                   self.format_string("block", self.__untainted_blocks)))
+                   common.format_string("block", self.__untainted_blocks)))
             print("    Untainted bytes:    %s %s" %
                   (str(self.__untainted_bytes).rjust(self.__padding, " "),
-                   self.format_string("byte", self.__untainted_bytes)))
+                   common.format_string("byte", self.__untainted_bytes)))
             print()
 
             if self.__file_hashes and not self.__simulate:
