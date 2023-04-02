@@ -23,36 +23,35 @@ class ByteWeiser():
     """
         Class for the ByteWeiser compare-and-replace process.
     """
-    __file_hashes = True
-    __file_input = None
-    __file_input_size = 0
-    __file_output = None
-    __file_output_size = 0
-
-    __buffer_size = 4096
-    __buffer_size_min = 1024
-    __buffer_size_max = 16384
-    __percent = 0
-    __second = 0
-    __simulate = False
-    __verbose = True
-
-    __byte_blocks = 0
-    __byte_remainder = 0
-    __replaced_blocks = 0
-    __replaced_bytes = 0
-    __untainted_blocks = 0
-    __untainted_bytes = 0
-
-    __chars_busy = ["/", "-", "\\", "|"]
-    __chars_index = 0
-    __padding = 0
-    __timestamp = None
 
     __version__ = common.get_version()
 
     def __init__(self):
-        return
+        self.__file_hashes = True
+        self.__file_input = None
+        self.__file_input_size = 0
+        self.__file_output = None
+        self.__file_output_size = 0
+
+        self.__buffer_size = 4096
+        self.__buffer_size_min = 1024
+        self.__buffer_size_max = 16384
+        self.__percent = 0
+        self.__second = 0
+        self.__simulate = False
+        self.__verbose = True
+
+        self.__byte_blocks = 0
+        self.__byte_remainder = 0
+        self.__replaced_blocks = 0
+        self.__replaced_bytes = 0
+        self.__untainted_blocks = 0
+        self.__untainted_bytes = 0
+
+        self.__chars_busy = ["/", "-", "\\", "|"]
+        self.__chars_index = 0
+        self.__padding = 0
+        self.__timestamp = None
 
     def compare_and_replace(self, file_input, file_output, buffer_size=4096,
                             simulate=False, verbose=True, progress=True,
