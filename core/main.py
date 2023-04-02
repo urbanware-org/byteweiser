@@ -19,7 +19,7 @@ from . import common
 from . import paval as pv
 
 
-class ByteWeiser():
+class ByteWeiser:
     """
         Class for the ByteWeiser compare-and-replace process.
     """
