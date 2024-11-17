@@ -71,16 +71,16 @@ class ByteWeiser:
         pv.intvalue(buffer_size, "buffer size", True, False, False)
 
         if file_input == file_output:
-            raise Exception("The path of the input and output file must not "
-                            "be identical.")
+            raise ValueError("The path of the input and output file must not "
+                             "be identical.")
 
         if buffer_size < self.__buffer_size_min:
-            raise Exception("The minimal buffer size is %s bytes." %
-                            str(self.__buffer_size_min))
+            raise ValueError("The minimal buffer size is %s bytes." %
+                             str(self.__buffer_size_min))
         if self.__buffer_size_max > 0:
             if buffer_size > self.__buffer_size_max:
-                raise Exception("The maximal buffer size is %s bytes." %
-                                str(self.__buffer_size_max))
+                raise ValueError("The maximal buffer size is %s bytes." %
+                                 str(self.__buffer_size_max))
 
         self.__replaced_blocks = 0
         self.__replaced_bytes = 0
@@ -106,8 +106,8 @@ class ByteWeiser:
         self.__byte_remainder = self.__file_input_size % self.__buffer_size
 
         if self.__file_input_size < self.__file_output_size:
-            raise Exception("The input file must at least have the same size "
-                            "as the output file.")
+            raise ValueError("The input file must at least have the same size "
+                             "as the output file.")
 
         if self.__file_hashes and not self.__simulate:
             if self.__verbose:
