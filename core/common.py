@@ -20,7 +20,7 @@ def format_string(string, number):
     """
         Format string by adding an 's' for plurals.
     """
-    if not number == 1:
+    if number != 1:
         string += "s"
     else:
         string += " "
