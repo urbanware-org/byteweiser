@@ -134,9 +134,6 @@ class ByteWeiser:
         else:
             fh_output = open(file_output, "r+b")
 
-        data_input = bytearray(b"")
-        data_output = bytearray(b"")
-
         pos = 0
         for block in range(self.__byte_blocks):
             data_input = bytearray(b"")
@@ -306,11 +303,6 @@ class ByteWeiser:
             Print the current progress in percent.
         """
         if self.__verbose:
-            if self.__byte_blocks == 0:
-                percent = self.__percent
-            else:
-                percent = float(block) / self.__byte_blocks * 100
-
             ts = dt.now()
             if ts.second > self.__second:
                 self.__chars_index = \
