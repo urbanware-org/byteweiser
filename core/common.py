@@ -4,7 +4,7 @@
 #
 # ByteWeiser - Byte comparison and replacement tool
 # Common core module
-# Copyright (C) 2021 by Ralf Kilian
+# Copyright (c) 2024 by Ralf Kilian
 # Distributed under the MIT License (https://opensource.org/licenses/MIT)
 #
 # GitHub: https://github.com/urbanware-org/byteweiser
