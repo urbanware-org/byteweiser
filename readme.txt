@@ -4,7 +4,7 @@ README (ByteWeiser)
     Project
 
         ByteWeiser
-        Version 1.0.2
+        Version 1.1.0
         Copyright (c) 2024 by Ralf Kilian
 
         GitHub: https://github.com/urbanware-org/byteweiser
