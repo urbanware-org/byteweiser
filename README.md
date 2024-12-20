@@ -69,7 +69,8 @@ Further information can be found inside the `contact.txt` file.
 
 ## Useless facts
 
-*   Actually, the project should be called "BlockWeiser", because the binary data is being processed blockwise instead of bytewise. If you want it bytewise, just set the buffer size to `1`.
+*   Actually, the project should be called "BlockWeiser", because the binary data is being processed blockwise instead of bytewise. If you wanted it bytewise, you would have to set the buffer size to `1`.
+
 *   The project name is derived from the German adjective "byteweise" ("bytewise").
 
 [Top](#byteweiser)
