@@ -35,7 +35,6 @@ class ByteWeiser:
 
         self.__buffer_size = 4096
         self.__buffer_size_min = 1
-        self.__buffer_size_max = 16384
         self.__percent = 0
         self.__second = 0
         self.__simulate = False
@@ -77,10 +76,6 @@ class ByteWeiser:
         if buffer_size < self.__buffer_size_min:
             raise ValueError("The minimal buffer size is %s bytes." %
                              str(self.__buffer_size_min))
-        if self.__buffer_size_max > 0:
-            if buffer_size > self.__buffer_size_max:
-                raise ValueError("The maximal buffer size is %s bytes." %
-                                 str(self.__buffer_size_max))
 
         self.__replaced_blocks = 0
         self.__replaced_bytes = 0
