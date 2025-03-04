@@ -106,8 +106,8 @@ class ByteWeiser:
         self.__byte_remainder = self.__file_input_size % self.__buffer_size
 
         if self.__file_input_size < self.__file_output_size:
-            raise ValueError("The input file must at least have the same size "
-                             "as the output file.")
+            raise ValueError("The input file must at least have the same "
+                             "size as the output file.")
 
         if self.__file_hashes and not self.__simulate:
             if self.__verbose:
