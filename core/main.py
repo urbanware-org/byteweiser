@@ -193,8 +193,8 @@ class ByteWeiser:
             print()
             print("    Full blocks:        %s %s\t(with buffer size %s)" %
                   (str(self.__byte_blocks).rjust(self.__padding, " "),
-                    common.format_string("block", self.__byte_blocks),
-                    self.__buffer_size))
+                   common.format_string("block", self.__byte_blocks),
+                   self.__buffer_size))
             if self.__byte_remainder == 0:
                 print("    Remainder:          %s bytes" %
                       ("0".rjust(self.__padding, " ")))
