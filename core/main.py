@@ -74,8 +74,12 @@ class ByteWeiser:
                              "be identical.")
 
         if buffer_size < self.__buffer_size_min:
-            raise ValueError("The minimal buffer size is %s bytes." %
-                             str(self.__buffer_size_min))
+            if self.__buffer_size_min == 1:
+                byteval = "byte"
+            else:
+                byteval = "bytes"
+            raise ValueError("The minimal buffer size is %s %s." %
+                             (str(self.__buffer_size_min), byteval))
 
         self.__replaced_blocks = 0
         self.__replaced_bytes = 0
