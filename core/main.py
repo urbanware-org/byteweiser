@@ -34,7 +34,7 @@ class ByteWeiser:
         self.__file_output_size = 0
 
         self.__buffer_size = 4096
-        self.__buffer_size_min = 1024
+        self.__buffer_size_min = 1
         self.__buffer_size_max = 16384
         self.__percent = 0
         self.__second = 0
