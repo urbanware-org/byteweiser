@@ -1,6 +1,12 @@
 
 CHANGELOG (ByteWeiser)
 
+    Next release (outstanding)
+
+        * Revised the buffer size values (lowered the minimum value and
+          completely removed the maximum buffer size).
+        * Revised the code in general (negligible changes).
+
     Version 1.1.0 (2024-11-18)
 
         + Added a method to generate SHA-256 file hashes (to verify that the
